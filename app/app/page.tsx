@@ -14,8 +14,8 @@ const FragilityMap = dynamic(
 
 function MapLoadingPlaceholder() {
   return (
-    <div className="flex h-full w-full items-center justify-center" style={{ backgroundColor: '#B4D4FF' }}>
-      <span style={{ color: '#176B87' }}>Loading map...</span>
+    <div className="flex h-full w-full items-center justify-center" style={{ backgroundColor: '#1f2b3d' }}>
+      <span style={{ color: '#5ab0c5' }}>Loading map...</span>
     </div>
   );
 }
@@ -70,20 +70,20 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#EEF5FF' }}>
+      <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#181e2a' }}>
         <div className="text-center">
           <div
             className="h-10 w-10 animate-spin rounded-full border-4 mx-auto mb-4"
-            style={{ borderColor: '#B4D4FF', borderTopColor: '#176B87' }}
+            style={{ borderColor: '#2a3a4e', borderTopColor: '#176B87' }}
           />
-          <p style={{ color: '#4a5568' }}>Loading hospital data...</p>
+          <p style={{ color: '#8899aa' }}>Loading hospital data...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#EEF5FF' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#181e2a' }}>
       <Navbar
         activeTab={activeTab}
         onTabChange={setActiveTab}
@@ -133,18 +133,18 @@ export default function Dashboard() {
             {/* Map Preview */}
             <div className="mb-10">
               <div className="flex items-center justify-between mb-5">
-                <h2 className="text-xl font-bold" style={{ color: '#1a2332' }}>Washington State Hospital Map</h2>
+                <h2 className="text-xl font-bold" style={{ color: '#e0e8f0' }}>Washington State Hospital Map</h2>
                 <button
                   onClick={() => setActiveTab('map')}
                   className="text-sm font-semibold transition-colors"
-                  style={{ color: '#176B87' }}
+                  style={{ color: '#5ab0c5' }}
                 >
                   View Full Map →
                 </button>
               </div>
               <div
-                className="h-[450px] rounded-xl overflow-hidden"
-                style={{ border: '2px solid #86B6F6' }}
+                className="h-[500px] rounded-xl overflow-hidden"
+                style={{ border: '2px solid #2a3a4e' }}
               >
                 <FragilityMap
                   data={hospitals}
@@ -175,10 +175,10 @@ export default function Dashboard() {
                 onChange={(e) => setColorBy(e.target.value as typeof colorBy)}
                 className="rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none"
                 style={{
-                  backgroundColor: '#B4D4FF',
-                  border: '2px solid #86B6F6',
-                  color: '#1a2332',
-                  boxShadow: '0 4px 12px rgba(23, 107, 135, 0.15)',
+                  backgroundColor: '#1f2b3d',
+                  border: '2px solid #2a3a4e',
+                  color: '#e0e8f0',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
                 }}
               >
                 <option value="fragilityScore">Color by Fragility</option>
@@ -201,7 +201,7 @@ export default function Dashboard() {
         {/* Analysis Tab */}
         {activeTab === 'analysis' && (
           <div className="px-8 py-8">
-            <h2 className="text-xl font-bold mb-8" style={{ color: '#1a2332' }}>Hospital Fragility Analysis</h2>
+            <h2 className="text-xl font-bold mb-8" style={{ color: '#e0e8f0' }}>Hospital Fragility Analysis</h2>
 
             {/* Regional Summary */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
@@ -239,7 +239,7 @@ export default function Dashboard() {
 
             {/* Risk Distribution */}
             <div className="mb-10">
-              <h3 className="text-sm font-bold uppercase tracking-wider mb-5" style={{ color: '#176B87' }}>
+              <h3 className="text-sm font-bold uppercase tracking-wider mb-5" style={{ color: '#5ab0c5' }}>
                 Risk Level Distribution
               </h3>
               <div className="flex gap-5">
@@ -268,7 +268,7 @@ export default function Dashboard() {
 
             {/* Hospitals Requiring Attention */}
             <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider mb-5" style={{ color: '#176B87' }}>
+              <h3 className="text-sm font-bold uppercase tracking-wider mb-5" style={{ color: '#5ab0c5' }}>
                 Hospitals Requiring Attention
               </h3>
               <div className="space-y-4">
@@ -281,30 +281,30 @@ export default function Dashboard() {
                       onClick={() => handleHospitalSelect(hospital.id)}
                       className="flex items-center justify-between rounded-xl p-5 cursor-pointer transition-all"
                       style={{
-                        backgroundColor: '#B4D4FF',
-                        border: '2px solid #86B6F6',
+                        backgroundColor: '#1f2b3d',
+                        border: '2px solid #2a3a4e',
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.borderColor = '#176B87';
-                        e.currentTarget.style.boxShadow = '0 4px 16px rgba(23, 107, 135, 0.15)';
+                        e.currentTarget.style.boxShadow = '0 4px 16px rgba(23, 107, 135, 0.2)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = '#86B6F6';
+                        e.currentTarget.style.borderColor = '#2a3a4e';
                         e.currentTarget.style.boxShadow = 'none';
                       }}
                     >
                       <div>
-                        <p className="font-semibold" style={{ color: '#1a2332' }}>{hospital.name}</p>
-                        <p className="text-sm" style={{ color: '#176B87' }}>
+                        <p className="font-semibold" style={{ color: '#e0e8f0' }}>{hospital.name}</p>
+                        <p className="text-sm" style={{ color: '#5ab0c5' }}>
                           {hospital.city}, Washington
                         </p>
                       </div>
                       <div className="flex items-center gap-5">
                         <div className="text-right">
-                          <p className="text-sm font-semibold" style={{ color: '#1a2332' }}>
+                          <p className="text-sm font-semibold" style={{ color: '#e0e8f0' }}>
                             {formatPercent(hospital.fragilityScore)} fragility
                           </p>
-                          <p className="text-xs" style={{ color: '#4a5568' }}>
+                          <p className="text-xs" style={{ color: '#8899aa' }}>
                             {formatNumber(hospital.totalBeds)} beds
                           </p>
                         </div>
@@ -338,7 +338,7 @@ export default function Dashboard() {
 function getRiskBadgeStyle(level: string) {
   switch (level) {
     case 'critical': return { backgroundColor: '#7f1d1d', color: 'white' };
-    case 'high': return { backgroundColor: '#dc2626', color: 'white' };
+    case 'high': return { backgroundColor: '#ef4444', color: 'white' };
     case 'medium': return { backgroundColor: '#f97316', color: 'white' };
     default: return { backgroundColor: '#22c55e', color: 'white' };
   }
@@ -353,7 +353,7 @@ function RegionCard({ region, hospitals }: { region: string; hospitals: Hospital
   const totalBeds = hospitals.reduce((sum, h) => sum + h.totalBeds, 0);
 
   const getFragilityColor = (score: number) => {
-    if (score >= 0.6) return '#dc2626';
+    if (score >= 0.6) return '#ef4444';
     if (score >= 0.4) return '#f97316';
     return '#22c55e';
   };
@@ -361,27 +361,27 @@ function RegionCard({ region, hospitals }: { region: string; hospitals: Hospital
   return (
     <div
       className="rounded-xl p-5 transition-all"
-      style={{ backgroundColor: '#B4D4FF', border: '2px solid #86B6F6' }}
+      style={{ backgroundColor: '#1f2b3d', border: '2px solid #2a3a4e' }}
     >
-      <h4 className="font-bold mb-4" style={{ color: '#1a2332' }}>{region}</h4>
+      <h4 className="font-bold mb-4" style={{ color: '#e0e8f0' }}>{region}</h4>
       <div className="space-y-3 text-sm">
         <div className="flex justify-between">
-          <span style={{ color: '#4a5568' }}>Hospitals</span>
-          <span className="font-semibold" style={{ color: '#1a2332' }}>{hospitals.length}</span>
+          <span style={{ color: '#8899aa' }}>Hospitals</span>
+          <span className="font-semibold" style={{ color: '#e0e8f0' }}>{hospitals.length}</span>
         </div>
         <div className="flex justify-between">
-          <span style={{ color: '#4a5568' }}>Avg Fragility</span>
+          <span style={{ color: '#8899aa' }}>Avg Fragility</span>
           <span className="font-semibold" style={{ color: getFragilityColor(avgFragility) }}>
             {formatPercent(avgFragility)}
           </span>
         </div>
         <div className="flex justify-between">
-          <span style={{ color: '#4a5568' }}>Avg Occupancy</span>
-          <span className="font-semibold" style={{ color: '#1a2332' }}>{formatPercent(avgOccupancy)}</span>
+          <span style={{ color: '#8899aa' }}>Avg Occupancy</span>
+          <span className="font-semibold" style={{ color: '#e0e8f0' }}>{formatPercent(avgOccupancy)}</span>
         </div>
         <div className="flex justify-between">
-          <span style={{ color: '#4a5568' }}>Total Beds</span>
-          <span className="font-semibold" style={{ color: '#1a2332' }}>{formatNumber(totalBeds)}</span>
+          <span style={{ color: '#8899aa' }}>Total Beds</span>
+          <span className="font-semibold" style={{ color: '#e0e8f0' }}>{formatNumber(totalBeds)}</span>
         </div>
       </div>
     </div>
@@ -392,7 +392,7 @@ function RiskBadge({ level, count, total }: { level: string; count: number; tota
   const getBadgeStyle = () => {
     switch (level) {
       case 'critical': return { backgroundColor: '#7f1d1d', color: 'white' };
-      case 'high': return { backgroundColor: '#dc2626', color: 'white' };
+      case 'high': return { backgroundColor: '#ef4444', color: 'white' };
       case 'medium': return { backgroundColor: '#f97316', color: 'white' };
       default: return { backgroundColor: '#22c55e', color: 'white' };
     }
@@ -401,7 +401,7 @@ function RiskBadge({ level, count, total }: { level: string; count: number; tota
   return (
     <div
       className="flex-1 rounded-xl p-5 text-center"
-      style={{ backgroundColor: '#B4D4FF', border: '2px solid #86B6F6' }}
+      style={{ backgroundColor: '#1f2b3d', border: '2px solid #2a3a4e' }}
     >
       <div
         className="inline-block rounded-full px-4 py-1.5 text-xs font-bold capitalize"
@@ -409,8 +409,8 @@ function RiskBadge({ level, count, total }: { level: string; count: number; tota
       >
         {level}
       </div>
-      <p className="mt-3 text-3xl font-bold" style={{ color: '#1a2332' }}>{count}</p>
-      <p className="text-sm" style={{ color: '#4a5568' }}>{((count / total) * 100).toFixed(0)}% of total</p>
+      <p className="mt-3 text-3xl font-bold" style={{ color: '#e0e8f0' }}>{count}</p>
+      <p className="text-sm" style={{ color: '#8899aa' }}>{((count / total) * 100).toFixed(0)}% of total</p>
     </div>
   );
 }

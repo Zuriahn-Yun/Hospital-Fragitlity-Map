@@ -9,8 +9,8 @@ export function StatCard({ title, value, subtitle, trend }: StatCardProps) {
   const getTrendColor = () => {
     switch (trend) {
       case 'up': return '#22c55e';
-      case 'down': return '#dc2626';
-      default: return '#4a5568';
+      case 'down': return '#ef4444';
+      default: return '#8899aa';
     }
   };
 
@@ -18,14 +18,14 @@ export function StatCard({ title, value, subtitle, trend }: StatCardProps) {
     <div
       className="rounded-xl p-5 transition-all hover:shadow-lg"
       style={{
-        backgroundColor: '#B4D4FF',
-        border: '2px solid #86B6F6',
+        backgroundColor: '#1f2b3d',
+        border: '2px solid #2a3a4e',
       }}
     >
-      <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: '#176B87' }}>
+      <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: '#5ab0c5' }}>
         {title}
       </p>
-      <p className="mt-2 text-3xl font-bold tabular-nums tracking-tight" style={{ color: '#1a2332' }}>
+      <p className="mt-2 text-3xl font-bold tabular-nums tracking-tight" style={{ color: '#e0e8f0' }}>
         {value}
       </p>
       {subtitle && (
