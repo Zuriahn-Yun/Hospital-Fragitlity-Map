@@ -323,6 +323,19 @@ export default function Dashboard() {
         )}
       </main>
 
+      {/* Data Source */}
+      <footer className="px-8 py-6 text-center text-sm" style={{ borderTop: '1px solid #2a3a4e', color: '#8899aa' }}>
+        Data source:{' '}
+        <a
+          href="https://geo.wa.gov/datasets/626cb2ca35c64ea1a2ac502c573e3ec9_0/about"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: '#5ab0c5', textDecoration: 'underline' }}
+        >
+          Washington State Department of Health — Hospital Data
+        </a>
+      </footer>
+
       {/* Hospital Detail Panel */}
       {selectedHospital && (
         <HospitalDetailPanel

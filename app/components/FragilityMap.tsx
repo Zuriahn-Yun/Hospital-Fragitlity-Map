@@ -229,15 +229,15 @@ export function FragilityMap({
           <div className="text-xs font-semibold mb-3" style={{ color: '#5ab0c5' }}>Marker Size = Beds</div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="h-3 w-3 rounded-full" style={{ backgroundColor: '#86B6F6' }} />
+              <div className="h-3 w-3 rounded-full" style={{ backgroundColor: '#5ab0c5' }} />
               <span className="text-xs" style={{ color: '#8899aa' }}>&lt;100</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="h-4 w-4 rounded-full" style={{ backgroundColor: '#86B6F6' }} />
+              <div className="h-4 w-4 rounded-full" style={{ backgroundColor: '#5ab0c5' }} />
               <span className="text-xs" style={{ color: '#8899aa' }}>200+</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="h-5 w-5 rounded-full" style={{ backgroundColor: '#86B6F6' }} />
+              <div className="h-5 w-5 rounded-full" style={{ backgroundColor: '#5ab0c5' }} />
               <span className="text-xs" style={{ color: '#8899aa' }}>500+</span>
             </div>
           </div>
